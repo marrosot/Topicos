@@ -12,6 +12,8 @@ namespace Topicos.MiLogicaDeNegocio
     [ServiceContract]
     public interface ILogicaNegocio
     {
+        [OperationContract]
+        ResultadoEcuacionCuadratica ResolverEcuacionCuadratica(float a, float b, float c);
 
         [OperationContract]
         string GetData(int value);
@@ -22,21 +24,43 @@ namespace Topicos.MiLogicaDeNegocio
         // TODO: Add your service operations here
     }
 
+    [DataContract]
+    public class ResultadoEcuacionCuadratica
+    {
+        private double elDiscriminante;
+
+        [DataMember]
+        public double Discriminante
+        {
+            get { return elDiscriminante; }
+            set { elDiscriminante = value; }
+        }
+
+        private double? laPrimeraRaiz;
+
+        [DataMember]
+        public double? PrimeraRaiz
+        {
+            get { return laPrimeraRaiz; }
+            set { laPrimeraRaiz = value; }
+        }
+
+        private double? laSegundaRaiz;
+
+        [DataMember]
+        public double? SegundaRaiz
+        {
+            get { return laSegundaRaiz; }
+            set { laSegundaRaiz = value; }
+        }
+
+
+
+
+    }
 
     // Use a data contract as illustrated in the sample below to add composite types to service operations.
     [DataContract]
-
-    public class ResultadoEcuacionCuadratica
-    {
-        private  int myVar;
-
-        public int MyProperty
-        {
-            get { return myVar; }
-            set { myVar = value; }
-        }
-
-    }
     public class CompositeType
     {
         bool boolValue = true;
