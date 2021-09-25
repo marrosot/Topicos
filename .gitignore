@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/NetCore.ConsoleApp/bin/Debug/net5.0
+/NetCore.ConsoleApp/obj
+/NetCore.Mensajeria.BL/bin/Debug/net5.0
+/NetCore.Mensajeria.BL/obj
+/NetCore.ConsoleApp/.vs/NetCore.ConsoleApp/v16
+/.vs
