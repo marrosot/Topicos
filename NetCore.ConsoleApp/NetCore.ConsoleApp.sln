@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCore.ConsoleApp", "NetCore.ConsoleApp.csproj", "{334C6E3C-F893-4FBF-8B15-3F8BCA6691B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCore.ConsoleApp", "NetCore.ConsoleApp.csproj", "{334C6E3C-F893-4FBF-8B15-3F8BCA6691B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCore.Mensajeria.BL", "..\NetCore.Mensajeria.BL\NetCore.Mensajeria.BL.csproj", "{4121495B-0CFD-4199-A23B-4510A32ED49C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCore.Mensajeria.BL", "..\NetCore.Mensajeria.BL\NetCore.Mensajeria.BL.csproj", "{4121495B-0CFD-4199-A23B-4510A32ED49C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Topicos.NetCore.NorthWind.Model", "Topicos.NetCore.NorthWind.Model\Topicos.NetCore.NorthWind.Model.csproj", "{DD08C35D-044E-4FA4-9EF4-8C52A01CC495}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Topico.NetCore.Sakila.Model", "Topico.NetCore.Sakila.Model\Topico.NetCore.Sakila.Model.csproj", "{95C24EAE-A0A9-49A0-8A50-FEDC8B586071}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{4121495B-0CFD-4199-A23B-4510A32ED49C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4121495B-0CFD-4199-A23B-4510A32ED49C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4121495B-0CFD-4199-A23B-4510A32ED49C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD08C35D-044E-4FA4-9EF4-8C52A01CC495}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD08C35D-044E-4FA4-9EF4-8C52A01CC495}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD08C35D-044E-4FA4-9EF4-8C52A01CC495}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD08C35D-044E-4FA4-9EF4-8C52A01CC495}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95C24EAE-A0A9-49A0-8A50-FEDC8B586071}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95C24EAE-A0A9-49A0-8A50-FEDC8B586071}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95C24EAE-A0A9-49A0-8A50-FEDC8B586071}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95C24EAE-A0A9-49A0-8A50-FEDC8B586071}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

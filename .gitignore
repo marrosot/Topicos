@@ -8,3 +8,11 @@
 /NetCore.Mensajeria.BL/obj
 /NetCore.ConsoleApp/.vs/NetCore.ConsoleApp/v16
 /.vs
+/ClassLibrary1/obj
+/NetCore.ConsoleApp/.vs/NetCore.ConsoleApp/DesignTimeBuild
+/NetCore.ConsoleApp/Topico.NetCore.Sakila.Model/bin/Debug/net5.0
+/NetCore.ConsoleApp/Topico.NetCore.Sakila.Model/obj
+/NetCore.ConsoleApp/Topicos.NetCore.NorthWind.Model/bin/Debug/net5.0
+/NetCore.ConsoleApp/Topicos.NetCore.NorthWind.Model/obj
+/NetCore.Convertidor/obj
+/NetCore.Convertidor/.vs/NetCore.Convertidor
