@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Topico.NetCore.Sakila.Model\**" />
+    <Compile Remove="Topicos.NetCore.NorthWind.BL\**" />
+    <Compile Remove="Topicos.NetCore.NorthWind.Model\**" />
+    <Compile Remove="Topicos.NetCore.Sakila.BL\**" />
+    <EmbeddedResource Remove="Topico.NetCore.Sakila.Model\**" />
+    <EmbeddedResource Remove="Topicos.NetCore.NorthWind.BL\**" />
+    <EmbeddedResource Remove="Topicos.NetCore.NorthWind.Model\**" />
+    <EmbeddedResource Remove="Topicos.NetCore.Sakila.BL\**" />
+    <None Remove="Topico.NetCore.Sakila.Model\**" />
+    <None Remove="Topicos.NetCore.NorthWind.BL\**" />
+    <None Remove="Topicos.NetCore.NorthWind.Model\**" />
+    <None Remove="Topicos.NetCore.Sakila.BL\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NetCore.Mensajeria.BL\NetCore.Mensajeria.BL.csproj" />
+    <ProjectReference Include="..\Topicos.NetCore.NorthWind.BL\Topicos.NetCore.NorthWind.BL.csproj" />
+    <ProjectReference Include="..\Topicos.NetCore.Sakila.BL\Topicos.NetCore.Sakila.BL.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace Topico.NetCore.Sakila.Model.MyModels
+namespace Topicos.NetCore.Sakila.Model.MyModels
 {
     public partial class Country
     {
