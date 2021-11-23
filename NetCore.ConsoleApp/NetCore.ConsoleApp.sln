@@ -17,6 +17,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Topicos.NetCore.Sakila.BL",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Topicos.NetCore.API.AdventureWorks", "Topicos.NetCore.API.AdventureWorks\Topicos.NetCore.API.AdventureWorks.csproj", "{F4EB5E1C-B546-4A3C-9E09-CD300999DCDC}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Topicos.NetCore.Proyecto1", "Topicos.NetCore.Proyecto1\Topicos.NetCore.Proyecto1.csproj", "{42C9D383-C445-4747-8E28-6B8B359F5E14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Topicos.NetCore.API.Sakila", "Topicos.NetCore.API.Sakila\Topicos.NetCore.API.Sakila.csproj", "{2F198A7D-65DF-45FA-A4F0-FD40C7C6DAEB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,14 @@ Global
 		{F4EB5E1C-B546-4A3C-9E09-CD300999DCDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4EB5E1C-B546-4A3C-9E09-CD300999DCDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4EB5E1C-B546-4A3C-9E09-CD300999DCDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42C9D383-C445-4747-8E28-6B8B359F5E14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42C9D383-C445-4747-8E28-6B8B359F5E14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42C9D383-C445-4747-8E28-6B8B359F5E14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42C9D383-C445-4747-8E28-6B8B359F5E14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F198A7D-65DF-45FA-A4F0-FD40C7C6DAEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F198A7D-65DF-45FA-A4F0-FD40C7C6DAEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F198A7D-65DF-45FA-A4F0-FD40C7C6DAEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F198A7D-65DF-45FA-A4F0-FD40C7C6DAEB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

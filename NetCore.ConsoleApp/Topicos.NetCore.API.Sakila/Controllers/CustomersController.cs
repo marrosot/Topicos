@@ -2,76 +2,44 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Topicos.NetCore.NorthWind.Model.MyModels;
+using Topicos.NetCore.Sakila.Model.MyModels;
 
-namespace Topicos.NetCore.API.AdventureWorks.Controllers
+namespace Topicos.NetCore.API.Sakila.Controllers
 {
     [Route("api/Customer")]
     [ApiController]
     public class CustomersController : ControllerBase
     {
-        private readonly AdventureWorksLT2019Context _context;
-        private readonly IMapper _mapper;
+        private readonly sakilaContext _context;
 
-        public CustomersController(IMapper mapper)
-        {
-            _context = new AdventureWorksLT2019Context();
-            _mapper = mapper;
-        }
-
-        /*public CustomersController(AdventureWorksLT2019Context context)
+        public CustomersController(sakilaContext context)
         {
             _context = context;
-        } */      
+        }
 
         // GET: api/Customers
-        //Metodo que me trae todos los Customers.
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<MyDtoModels.DtoCustomer>>> GetCustomers(int pageSize = 10, int pageNumber = 1)
+        public async Task<ActionResult<IEnumerable<Customer>>> GetCustomers()
         {
-            var customerBD = (await _context.Customers.Include(c => c.CustomerAddresses).ThenInclude(a => a.Address).Skip(pageSize * (pageNumber - 1)).Take(pageSize).ToListAsync());
-            var customerResultante = _mapper.Map<List<MyDtoModels.DtoCustomer>>(customerBD);
-
-            return customerResultante;
+            return await _context.Customers.ToListAsync();
         }
 
         // GET: api/Customers/5
-        //Este método, me trae la info de un X customer.
         [HttpGet("{id}")]
-        public async Task<ActionResult<MyDtoModels.DtoCustomer>> GetCustomer(int id)
+        public async Task<ActionResult<Customer>> GetCustomer(int id)
         {
-            var customerBD = (await _context.Customers.Include(c => c.CustomerAddresses).ThenInclude(a => a.Address).Where(c => c.CustomerId == id).ToListAsync()).FirstOrDefault();
-            //var customer = await _context.Customers.FindAsync (id);
+            var customer = await _context.Customers.FindAsync(id);
 
-            if (customerBD == null)
+            if (customer == null)
             {
                 return NotFound();
             }
-            var customerResultante = _mapper.Map<MyDtoModels.DtoCustomer>(customerBD);
 
-            return customerResultante;
+            return customer;
         }
-
-        // GET: api/Customers/PagedQuery/5?HelloWorld=1234
-        [HttpGet("PagedQuery/{id}")]
-        public async Task<ActionResult<MyDtoModels.DtoCustomer>> GetCustomer(int id, int HelloWorld)
-        {
-            var customerBD = (await _context.Customers.Include(c => c.CustomerAddresses).ThenInclude(a => a.Address).Where(c => c.CustomerId == id).ToListAsync()).FirstOrDefault();
-            //var customer = await _context.Customers.FindAsync (id);
-
-            if (customerBD == null)
-            {
-                return NotFound();
-            }
-            var customerResultante = _mapper.Map<Customer, MyDtoModels.DtoCustomer>(customerBD);
-
-            return customerResultante;
-        }
-
 
         // PUT: api/Customers/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754

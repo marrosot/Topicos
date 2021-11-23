@@ -5,11 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Topicos.NetCore.NorthWind.Model\Topicos.NetCore.NorthWind.Model.csproj" />
+    <Compile Remove="Logica\Acciones\**" />
+    <EmbeddedResource Remove="Logica\Acciones\**" />
+    <None Remove="Logica\Acciones\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Logica\Acciones\" />
+    <ProjectReference Include="..\Topicos.NetCore.NorthWind.Model\Topicos.NetCore.NorthWind.Model.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -31,6 +31,7 @@ namespace Topicos.NetCore.NorthWind.Model.MyModels
                 {
                     elSuffix = this.Suffix;
                 }
+
                 var elResultado = $"{elTitle}{elFirstName}{elMiddleName}{elLastName}{elSuffix}";
 
                 return elResultado;

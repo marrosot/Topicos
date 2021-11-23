@@ -16,3 +16,14 @@
 /NetCore.ConsoleApp/Topicos.NetCore.NorthWind.Model/obj
 /NetCore.Convertidor/obj
 /NetCore.Convertidor/.vs/NetCore.Convertidor
+/NetCore.ConsoleApp/.vs/NetCore.ConsoleApp/config
+/NetCore.ConsoleApp/NetCore.ConsoleApp/obj
+/NetCore.ConsoleApp/NetCore.Mensajeria.BL/obj
+/NetCore.ConsoleApp/Topicos.NetCore.API.AdventureWorks/bin/Debug/net5.0
+/NetCore.ConsoleApp/Topicos.NetCore.API.AdventureWorks/obj
+/NetCore.ConsoleApp/Topicos.NetCore.API.Sakila/bin/Debug/net5.0
+/NetCore.ConsoleApp/Topicos.NetCore.API.Sakila/obj
+/NetCore.ConsoleApp/Topicos.NetCore.NorthWind.BL/obj
+/NetCore.ConsoleApp/Topicos.NetCore.Proyecto1/bin/Debug/net5.0
+/NetCore.ConsoleApp/Topicos.NetCore.Proyecto1/obj
+/NetCore.ConsoleApp/Topicos.NetCore.Sakila.BL/obj

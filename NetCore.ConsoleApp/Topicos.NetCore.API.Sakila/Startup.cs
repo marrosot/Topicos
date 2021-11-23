@@ -11,7 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Topicos.NetCore.API.AdventureWorks
+namespace Topicos.NetCore.API.Sakila
 {
     public class Startup
     {
@@ -29,13 +29,7 @@ namespace Topicos.NetCore.API.AdventureWorks
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Topicos.NetCore.API.AdventureWorks", Version = "v1" });
-            });
-
-            services.AddAutoMapper(typeof(Startup));
-            services.AddSwaggerGen(options =>
-            {
-                options.CustomSchemaIds(type => type.ToString());
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Topicos.NetCore.API.Sakila", Version = "v1" });
             });
         }
 
@@ -46,7 +40,7 @@ namespace Topicos.NetCore.API.AdventureWorks
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Topicos.NetCore.API.AdventureWorks v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Topicos.NetCore.API.Sakila v1"));
             }
 
             app.UseRouting();
