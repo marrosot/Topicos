@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Topicos.NetCore.Sakila.Model.MyModels;
+using Topicos.NetCore.Sakila.BL.Logica.Servicio;
 
 namespace Topicos.NetCore.API.Sakila.Controllers
 {
@@ -24,7 +25,12 @@ namespace Topicos.NetCore.API.Sakila.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Customer>>> GetCustomers()
         {
+            var elServicio = new Topicos.NetCore.Sakila.BL.Logica.Servicio.Customer();
+
+            var x = elServicio.xyz();
+
             return await _context.Customers.ToListAsync();
+
         }
 
         // GET: api/Customers/5

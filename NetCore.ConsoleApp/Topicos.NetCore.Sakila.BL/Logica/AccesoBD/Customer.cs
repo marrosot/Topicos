@@ -6,7 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-
 namespace Topicos.NetCore.Sakila.BL.Logica.AccesoBD
 {
     public class Customer
@@ -14,20 +13,33 @@ namespace Topicos.NetCore.Sakila.BL.Logica.AccesoBD
 
         private static Model.MyModels.sakilaContext elContexto;
 
-       public IList<Model.MyModels.Customer> BuscarPorNombreAproximadoDelStateProvince(string nombreAproximadoDelState)
-        {
-          /*  IList<Model.MyModels.Customer> resultado;
 
-            //Con el Using, no es necesario crear la variable privada stática arriba ni el constructor
-            //ya que aquí mismo se declara y se inicializa.
-            using (var _elContexto = new Model.MyModels.sakilaContext())
-            {
-                var laConsulta = _elContexto.Customers.Include(c => c.CustomerAddresses).ThenInclude(ca => ca.Address).
-                    Where(c => c.CustomerAddresses.Any(ca => ca.Address.StateProvince.Contains(nombreAproximadoDelState))).
-                    OrderByDescending(c => c.Phone);
-                resultado = laConsulta.ToList();
-            }*/
+        //Este metodo me trae sólo un resultado.
+        public Model.MyModels.Customer BuscarPorId(int customerId)
+        {
+            Model.MyModels.Customer resultado;
+            //El Find sirve para lo mismo del de abajo pero es más rápido.
+            //resultado = elContexto.Customers.Find(customerId);
+            resultado = elContexto.Customers.Where(c => c.CustomerId == customerId).FirstOrDefault();
             return resultado;
         }
+
+
+        //Listado de clientes por nombre aproximado del City o El Country
+        public IList<Model.MyModels.Customer> BuscarPorNombreAproximadoDeLaUbicacion(string nombreAproximado)
+        {
+            IList<Model.MyModels.Customer> resultado = new List<Model.MyModels.Customer>();
+
+            using (var _elContexto = new Model.MyModels.sakilaContext())
+            {
+                var laConsulta = _elContexto.Customers.Include(c => c.Address).ThenInclude(a => a.City).ThenInclude(ct => ct.Country).
+                    Where(c => c.Address.City.City1.Contains(nombreAproximado) || c.Address.City.Country.Country1.Contains(nombreAproximado));
+                                             
+                resultado = laConsulta.ToList();
+            }
+            return resultado;
+        }
+
+    
     }
 }

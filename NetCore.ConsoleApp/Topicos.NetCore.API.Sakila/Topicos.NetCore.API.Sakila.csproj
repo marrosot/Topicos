@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.12">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -20,6 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Topico.NetCore.Sakila.Model\Topicos.NetCore.Sakila.Model.csproj" />
+    <ProjectReference Include="..\Topicos.NetCore.Sakila.BL\Topicos.NetCore.Sakila.BL.csproj" />
   </ItemGroup>
 
 </Project>

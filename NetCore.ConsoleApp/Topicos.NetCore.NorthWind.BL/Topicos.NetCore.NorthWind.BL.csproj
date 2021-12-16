@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Topicos.NetCore.NorthWind.Model\Topicos.NetCore.NorthWind.Model.csproj" />
+    <ProjectReference Include="..\Topicos.NetCore.Proyecto1\Topicos.NetCore.Proyecto1.csproj" />
   </ItemGroup>
 
   <ItemGroup>

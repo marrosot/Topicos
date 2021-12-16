@@ -5,21 +5,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Topicos.NetCore.Proyecto1.MyProperties
+namespace Topicos.NetCore.Proyecto1.MyModels
 {
-    public partial class Products
+    public partial class Product
     {
         [NotMapped]
-        public string xxxx 
+        public string NombreDeLaCategoria
         {
             get
             {
-                var elResultado = $" ";
+                var elResultado = string.Empty;
+
+                if (this.ProductCategory != null)
+                    elResultado = this.ProductCategory.Name;
 
                 return elResultado;
             }
 
-            set { }            
+            set { }
         }
+
     }
 }

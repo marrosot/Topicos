@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 namespace Topicos.NetCore.NorthWind.BL.Logica.AccesoBD
 {
     public class Customer
+    //internal class Customer
     {
 
         //Se crea la conexion a la BD. Estática para que siempre exista y privada para que nadie pueda tocarla.
@@ -57,5 +58,5 @@ namespace Topicos.NetCore.NorthWind.BL.Logica.AccesoBD
             var resultado = temporal;
             return resultado;
         }
-    }
+    }    
 }

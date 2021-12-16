@@ -6,13 +6,13 @@ namespace NetCore.ConsoleApp
     {
         static void Main(string[] args)
         {
-            HagaLaMagia();
+            HagaLaMagiaProyecto1();
         }
 
-        private static void HagaLaMagia()
+        private static void HagaLaMagiaProyecto1()
         {
             var laMagia = new LogicaPrincipal();
-            laMagia.HagaLaMagia();
+            laMagia.HagaLaMagiaProyecto1();
         }
     }
 }

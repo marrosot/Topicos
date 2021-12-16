@@ -25,6 +25,12 @@ namespace NetCore.ConsoleApp
             ConsultaPorPaisAproximado();
         }
 
+        public void HagaLaMagiaProyecto1()
+        {
+            ConsultaPorNombreAproximado();
+            ConsultaPorPaisAproximado();
+        }
+
         private void ConsultaPorNombreAproximado()
         {
             var elNombreAproximado = "as";
@@ -41,6 +47,36 @@ namespace NetCore.ConsoleApp
             ImprimirCustomers(elResultado);
         }
 
+
+        private void ConsultaProductosDescontiniadosPorPrecio()
+        {
+            var elRango1 = 200;
+            var elRango2 = 300;
+            var elServicio = new Topicos.NetCore.NorthWind.BL.Logica.AccesoBD.Product();
+            var elResultado = elServicio.BuscarProductosDescontinuados(elRango1, elRango2);
+            ImprimirProductos(elResultado);
+        }
+
+        private void ConsultaOrdenesPorNombreAproximadoDeCliente()
+        {
+            var elNombreAproximado = "Jhon";
+            var elServicio = new Topicos.NetCore.NorthWind.BL.Logica.AccesoBD.SalesOrderHeader();
+            var elResultado = elServicio.BuscarOrdenesPorNombreAproximadoDeCliente(elNombreAproximado);
+            ImprimirOrdenes(elResultado);
+        }
+
+        private void ConsultaBuscarProductosPorIntervaloDeFechas()
+        {
+            var elNombreAproximado = "Oil";
+            var elIntervalo1 = 3 - 3 - 2002;
+            var elIntervalo2 = 6 - 6 - 2002;
+
+            var elServicio = new Topicos.NetCore.NorthWind.BL.Logica.AccesoBD.SalesOrderHeader();
+            var elResultado = elServicio.BuscarProductosPorIntervaloDeFechas(elNombreAproximado,elIntervalo1,elIntervalo2);
+            ImprimirProductos(elResultado);
+        }
+
+
         private void ImprimirCustomers(IList<Topicos.NetCore.NorthWind.Model.MyModels.Customer> elResultado)
         {
             if (elResultado == null)
@@ -56,6 +92,21 @@ namespace NetCore.ConsoleApp
                 {
                     System.Console.WriteLine($"   - Address Line 1: {direccion.Address.AddressLine1} - City: {direccion.Address.City} - State: {direccion.Address.StateProvince} - Country: {direccion.Address.CountryRegion}");
                 }
+            }
+        }
+
+
+        private void ImprimirProductos(IList<Topicos.NetCore.Proyecto1.MyModels.Product> elResultado)
+        {
+            if (elResultado == null)
+            {
+                System.Console.WriteLine("Lista sin elementos");
+                return;
+            }
+            foreach (var product in elResultado)
+            {
+                System.Console.WriteLine($"ID: {product.ProductId} - Nombre: {product.Name} - Precio: {product.ListPrice}");
+               
             }
         }
     }
