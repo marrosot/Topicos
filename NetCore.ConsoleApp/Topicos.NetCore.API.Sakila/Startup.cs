@@ -31,6 +31,12 @@ namespace Topicos.NetCore.API.Sakila
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Topicos.NetCore.API.Sakila", Version = "v1" });
             });
+
+            services.AddAutoMapper(typeof(Startup));
+            services.AddSwaggerGen(options =>
+            {
+                options.CustomSchemaIds(Type => Type.ToString());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

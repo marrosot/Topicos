@@ -90,7 +90,8 @@ namespace NetCore.ConsoleApp
                 System.Console.WriteLine("Direcciones:");
                 foreach (var direccion in customer.CustomerAddresses)
                 {
-                    System.Console.WriteLine($"   - Address Line 1: {direccion.Address.AddressLine1} - City: {direccion.Address.City} - State: {direccion.Address.StateProvince} - Country: {direccion.Address.CountryRegion}");
+                    System.Console.WriteLine($"   - Address Line 1: {direccion.Address.AddressLine1} - City: {direccion.Address.City}" +
+                        $" - State: {direccion.Address.StateProvince} - Country: {direccion.Address.CountryRegion}");
                 }
             }
         }

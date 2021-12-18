@@ -45,8 +45,5 @@ namespace Topicos.NetCore.NorthWind.BL.Logica.AccesoBD
             return resultado;
         }
 
-   
-
-
     }
 }

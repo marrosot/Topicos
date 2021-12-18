@@ -33,7 +33,8 @@ namespace Topicos.NetCore.API.AdventureWorks.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<MyDtoModels.DtoCustomer>>> GetCustomers(int pageSize = 10, int pageNumber = 1)
         {
-            var customerBD = (await _context.Customers.Include(c => c.CustomerAddresses).ThenInclude(a => a.Address).Skip(pageSize * (pageNumber - 1)).Take(pageSize).ToListAsync());
+            var customerBD = (await _context.Customers.Include(c => c.CustomerAddresses).ThenInclude(a => a.Address).
+                Skip(pageSize * (pageNumber - 1)).Take(pageSize).ToListAsync());
             var customerResultante = _mapper.Map<List<MyDtoModels.DtoCustomer>>(customerBD);
 
             return customerResultante;
@@ -44,7 +45,8 @@ namespace Topicos.NetCore.API.AdventureWorks.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<MyDtoModels.DtoCustomer>> GetCustomer(int id)
         {
-            var customerBD = (await _context.Customers.Include(c => c.CustomerAddresses).ThenInclude(a => a.Address).Where(c => c.CustomerId == id).ToListAsync()).FirstOrDefault();
+            var customerBD = (await _context.Customers.Include(c => c.CustomerAddresses).ThenInclude(a => a.Address).
+                Where(c => c.CustomerId == id).ToListAsync()).FirstOrDefault();
             //var customer = await _context.Customers.FindAsync (id);
 
             if (customerBD == null)

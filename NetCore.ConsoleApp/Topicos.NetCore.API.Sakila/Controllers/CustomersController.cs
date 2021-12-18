@@ -6,7 +6,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Topicos.NetCore.Sakila.Model.MyModels;
-using Topicos.NetCore.Sakila.BL.Logica.Servicio;
+//using Topicos.NetCore.Sakila.BL.Logica.Servicio;
+using AutoMapper;
 
 namespace Topicos.NetCore.API.Sakila.Controllers
 {
@@ -15,36 +16,51 @@ namespace Topicos.NetCore.API.Sakila.Controllers
     public class CustomersController : ControllerBase
     {
         private readonly sakilaContext _context;
+        private readonly IMapper _mapper;
 
-        public CustomersController(sakilaContext context)
+        public CustomersController(IMapper mapper)
         {
-            _context = context;
+            _context = new sakilaContext();
+            _mapper = mapper;
         }
 
         // GET: api/Customers
+        //[HttpGet]
+        //public async Task<ActionResult<IEnumerable<MyDtoModels.DtoCustomer>>> GetCustomers(int pageSize = 10, int pageNumber = 1)
+       // {
+         //   var elServicio = new Topicos.NetCore.Sakila.BL.Logica.Servicio.Customer();
+
+         //   var x = elServicio.xyz();
+
+          //  return await _context.Customers.ToListAsync();
+
+        //}
+
+        // GET: api/Customers
+        //Metodo que me trae todos los Customers.
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Customer>>> GetCustomers()
+        public async Task<ActionResult<IEnumerable<MyDtoModels.DtoCustomer>>> GetCustomers(int pageSize = 10, int pageNumber = 1)
         {
-            var elServicio = new Topicos.NetCore.Sakila.BL.Logica.Servicio.Customer();
+            var customerBD = (await _context.Customers.Include(c => c.Address).ThenInclude(a => a.City).
+                ThenInclude(c => c.Country).Skip(pageSize * (pageNumber - 1)).Take(pageSize).ToListAsync());
+            var customerResultante = _mapper.Map<List<MyDtoModels.DtoCustomer>>(customerBD);
 
-            var x = elServicio.xyz();
-
-            return await _context.Customers.ToListAsync();
-
+            return customerResultante;
         }
 
         // GET: api/Customers/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Customer>> GetCustomer(int id)
+        public async Task<ActionResult<API.Sakila.MyDtoModels.DtoCustomer>> GetCustomer(int id)
         {
-            var customer = await _context.Customers.FindAsync(id);
+            var customerBD = (await _context.Customers.Include(c => c.Address).ThenInclude(a => a.City).
+                ThenInclude(c => c.Country).Where(c => c.CustomerId == id).ToListAsync()).FirstOrDefault();
 
-            if (customer == null)
+            if (customerBD == null)
             {
                 return NotFound();
             }
-
-            return customer;
+            var customerResultante = _mapper.Map<MyDtoModels.DtoCustomer>(customerBD);
+            return customerResultante;
         }
 
         // PUT: api/Customers/5
